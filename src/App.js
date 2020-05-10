@@ -2,17 +2,17 @@ import React  from 'react';
 import ToDos from './components/ToDos';
 import InputToDo from './components/InputToDo';
 import FilterToDos from './components/FilterToDos';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import toDosReducer from './redux/reducer'
 
-import { createStore, Provider } from 'react-redux';
-import { toDosReducer } from './redux/reducer';
-
-// const store = createStore(toDosReducer)
+const store = createStore(toDosReducer)
 
 
 function App() {
 
   return (
-    <Provider>
+    <Provider store={store}>
       <div className="container_parent">
         <InputToDo />
         <hr />
