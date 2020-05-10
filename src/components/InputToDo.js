@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToDo } from '../redux/actions'
 
 const InputToDo = () => {
     const [inputValue, setInputValue] = useState('');
+
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         setInputValue(e.target.value)
     }
 
     const handleSubmit = () => {
-        props.addToDoToState(inputValue)
+        dispatch(addToDo(inputValue))
         setInputValue('')
     }
 
@@ -22,8 +24,4 @@ const InputToDo = () => {
         </React.Fragment>        
     );
 }
-
-const mapDispatchToProps = (dispatch) => ({
-    addToDoToState: (text) => dispatch(addToDo(text))
-})
-export default connect(null, mapDispatchToProps)(InputToDo);
+export default InputToDo;

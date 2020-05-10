@@ -1,7 +1,7 @@
 import { ADD_TODO, SELECT_FILTER, FETCH_TODOS } from "./actions";
 
 const initialState = {
-    todos: [{ id: 1, text: 'DUMMY'}],
+    todos: [],
     selectedFilter: 'ALL'
 }
 
@@ -11,7 +11,12 @@ const toDosReducer = (state = initialState, action) => {
         case ADD_TODO: 
             return {
                 ...state,
-                todos: [...state.todos, action.payload]
+                todos: [
+                    ...state.todos,
+                    {
+                    id: Math.round(Math.random() * 1000000),
+                    text: action.payload
+                }]
             }
         
         case SELECT_FILTER: 
