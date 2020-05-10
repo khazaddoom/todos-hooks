@@ -21,10 +21,10 @@ export const deleteToDo = (index) => {
     }
 }
 
-export const toggleToDo = (index) => {
+export const toggleToDo = (id) => {
     return {
         type: TOGGLE_TODO,
-        payload: index
+        payload: id
     }
 }
 

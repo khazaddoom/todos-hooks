@@ -1,4 +1,4 @@
-import { ADD_TODO, SELECT_FILTER, FETCH_TODOS } from "./actions";
+import { ADD_TODO, SELECT_FILTER, FETCH_TODOS, TOGGLE_TODO } from "./actions";
 
 const initialState = {
     todos: [],
@@ -15,15 +15,17 @@ const toDosReducer = (state = initialState, action) => {
                     ...state.todos,
                     {
                     id: Math.round(Math.random() * 1000000),
-                    text: action.payload
+                    text: action.payload,
+                    isCompleted: false
                 }]
             }
         
-        case SELECT_FILTER: 
-            return {
-                ...state,
-                selectedFilter: action.payload
-            }
+        case TOGGLE_TODO: 
+            state.todos.map(todo => {
+                if(todo.id === action.payload)
+                    todo.status = 
+            })
+            return { ...state };
 
         default: return { ...state };
     }

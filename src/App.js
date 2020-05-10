@@ -18,7 +18,7 @@ function App() {
         <hr />
         <ToDos />
         <hr />
-        {/* <FilterToDos /> */}
+        <FilterToDos />
       </div>
     </Provider>    
   );
