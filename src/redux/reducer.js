@@ -1,7 +1,7 @@
 import { ADD_TODO, SELECT_FILTER, FETCH_TODOS } from "./actions";
 
 const initialState = {
-    todos: [],
+    todos: [{ id: 1, text: 'DUMMY'}],
     selectedFilter: 'ALL'
 }
 

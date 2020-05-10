@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import toDosReducer from './redux/reducer'
 
-const store = createStore(toDosReducer)
+const store = createStore(toDosReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <hr />
         <ToDos />
         <hr />
-        <FilterToDos />
+        {/* <FilterToDos /> */}
       </div>
     </Provider>    
   );

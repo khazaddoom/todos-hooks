@@ -5,13 +5,12 @@ export default function ToDo({todo}) {
 
     const [checked, setChecked] = useState(false);
 
-    useEffect(() => {
-        console.log('called', todo.id)
-    }, [todo.text, todo.id]);
+    // useEffect(() => {
+    //     console.log('called', todo.id)
+    // }, [todo.text, todo.id]);
 
     const handleChange = (e) => {
-        console.log(e.target.value)
-        setChecked(e.target.value === 'on'? false: true)
+        setChecked(!checked)
     }
 
     return (
