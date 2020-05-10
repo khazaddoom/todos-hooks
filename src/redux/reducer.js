@@ -1,11 +1,11 @@
-import { ADD_TODO, SELECT_FILTER } from "./actions";
+import { ADD_TODO, SELECT_FILTER, FETCH_TODOS } from "./actions";
 
 const initialState = {
     todos: [],
     selectedFilter: 'ALL'
 }
 
-const reducer = (state = initialState, action) => {
+const toDosReducer = (state = initialState, action) => {
     switch(action.type) {
         
         case ADD_TODO: 
@@ -24,4 +24,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export default reducer;
+export default toDosReducer;

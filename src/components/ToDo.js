@@ -5,7 +5,7 @@ export default function ToDo({todo}) {
 
     useEffect(() => {
         console.log('called', todo.id)
-    }, [todo.text])
+    }, [todo.text, todo.id])
 
     return (
         
