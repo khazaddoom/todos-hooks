@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { selectFilter, toggleToDo } from '../redux/actions';
 // import './ToDo.css';
 
 export default function ToDo({todo}) {
 
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(todo.isCompleted);
     const dispatch = useDispatch();
+
+    
 
     const handleChange = (e) => {
         setChecked(!checked)

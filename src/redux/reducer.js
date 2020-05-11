@@ -25,6 +25,12 @@ const toDosReducer = (state = initialState, action) => {
             todoToUpdate.isCompleted = !todoToUpdate.isCompleted;
             return { ...state };
 
+        case 'SELECT_FILTER':
+            return {
+                ...state,
+                selectedFilter: action.payload
+            }
+
         default: return { ...state };
     }
 }

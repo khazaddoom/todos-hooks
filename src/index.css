@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+
+.list_container {
+  height: 100px;
+  overflow-y: scroll;
+}
+
 a {
   margin: 0 .5rem;
 }
@@ -25,4 +31,9 @@ a {
   align-items: center;
   height: 300px;
   background-color: rgb(139, 187, 236);
+}
+
+.selected {
+  background-color: black;
+  color: white;
 }
