@@ -21,10 +21,8 @@ const toDosReducer = (state = initialState, action) => {
             }
         
         case TOGGLE_TODO: 
-            state.todos.map(todo => {
-                if(todo.id === action.payload)
-                    todo.status = 
-            })
+            let todoToUpdate = state.todos.find(todo => todo.id === action.payload)
+            todoToUpdate.isCompleted = !todoToUpdate.isCompleted;
             return { ...state };
 
         default: return { ...state };

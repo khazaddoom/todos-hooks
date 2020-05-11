@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import ToDo from './ToDo'
 
@@ -6,9 +6,6 @@ const ToDos =  ()  => {
 
     let todos = useSelector(state => [...state.todos])
     const filter = useSelector(state => state.selectedFilter)
-
-    if(filter !== 'ALL')
-        todos = todos.filter(todo => todo.status === filter)
 
     if(todos.length > 0)
         return (
